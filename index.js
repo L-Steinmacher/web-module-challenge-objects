@@ -161,10 +161,16 @@ Use the getReviewsByRating function below to do the following:
   ]
 */
 
- function getReviewByRating(/* code here */) {
-    /* code here */
+ function getReviewByRating(arr,num) {
+   let scope = []
+   for(let i = 0; i< arr.length; i++){
+     if(arr[i].rating >= num && arr[i].rating < num + 0.9){
+      scope.push(arr[i]);
+     }
+   }
+    return scope;
   }
-
+ console.log(getReviewByRating(reviews, 4))
   
 /* 💪💪💪💪💪💪💪💪💪💪 STRETCH 2: 💪💪💪💪💪💪💪💪💪💪   
 Use the getLongReviews function below to do the following:
