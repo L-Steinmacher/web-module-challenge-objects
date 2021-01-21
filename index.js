@@ -54,17 +54,14 @@ export const burger = {
   price: 18, 
   category: "Lunch", 
   discount:function(customer){
-    if(customer === "teacher"){
-      return this.price *= .75;
-    }else if(customer === 'student'){
-      return this.price *= .90;
-    }else if(customer === 'public'){
-      return this.price *= .90;
+    if(customer === "teacher" || customer ==='student'){
+      return 13.5;
     }else{
-      return this.price;
+      return 16.2;
     }
   }
 }
+  
 
 console.log(burger.discount("teacher"))
 
@@ -215,9 +212,13 @@ Use the carMaker function below to do the following:
 */
 
 
-function carMaker(/* code here */) {
-    /* code here */
-    
+function carMaker(miles) {
+    let car1 = {
+      odom: miles,
+      drive:(distance) =>  {this.odom += distance; return car1.odom;},
+      
+    }
+    return car1;
 }
 
 
