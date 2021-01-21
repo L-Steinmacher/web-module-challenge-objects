@@ -16,7 +16,7 @@ The function should:
 */
 
 function createMenuItem(obj){
-    let menuItems = 
+    let menuItems = {};
 }
 
 /* 🚀🚀🚀🚀🚀🚀🚀🚀🚀🚀 Task 1b: 🚀🚀🚀🚀🚀🚀🚀🚀🚀🚀
