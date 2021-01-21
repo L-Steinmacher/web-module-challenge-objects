@@ -56,8 +56,12 @@ export const burger = {
   discount:function(customer){
     if(customer === "teacher"){
       return this.price *= .75;
-    }else {
+    }else if(customer === 'student'){
       return this.price *= .90;
+    }else if(customer === 'public'){
+      return this.price *= .90;
+    }else{
+      return this.price;
     }
   }
 }
@@ -80,7 +84,7 @@ const reviews = [
 Using the reviews array above:
   1. log only Julius' feedback to the console - no function needed 
 */
-console.log(reviews[5].feedback)
+console.log(reviews[5].feedback);
 
 
 
@@ -100,8 +104,8 @@ Reyna's feedback is missing! Use what you know to do the following: (no function
   2. log the reviews array to the console to check your work
 */
 
-
-
+reviews[7].feedback ="Absolutely love that they have karaoke Fridays! Food and drink selection is okay.";
+console.log(reviews);
 
 
 /* 🚀🚀🚀🚀🚀🚀🚀🚀🚀🚀 Task 6: 🚀🚀🚀🚀🚀🚀🚀🚀🚀🚀
@@ -114,12 +118,11 @@ Use the getReviewByIndex function below to do the following:
   For example: getReviewByIndex(reviews,0) would return: "Daniela gave the restaurant a 5 star review, and their feedback was: Beautiful atmosphere and wonderful vegan options!"
 */
 
-
-function getReviewByIndex(/*Your code here*/) {
-  /*Your code here*/
+function getReviewByIndex(arr, index) {
+  return `${arr[index].name} gave the restaurant a ${arr[index].rating} star review, and their feedback was: ${arr[index].feedback}`
 }
 
-
+console.log(getReviewByIndex(reviews, 0));
   
 
 /* 🚀🚀🚀🚀🚀🚀🚀🚀🚀🚀 Task 7: 🚀🚀🚀🚀🚀🚀🚀🚀🚀🚀 
@@ -134,9 +137,11 @@ Use the getLastReview function below to do the following:
 */
 
 
-function getLastReview(/*Your code here*/) {
-  /*Your code here*/
+function getLastReview(arr) {
+  return `${arr[arr.length-1].name} gave the restaurant a ${arr[arr.length-1].rating} star review, and their feedback was: ${arr[arr.length-1].feedback}`;
 } 
+
+console.log(getLastReview(reviews));
 
 
 
